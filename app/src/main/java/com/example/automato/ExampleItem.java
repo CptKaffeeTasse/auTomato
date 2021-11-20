@@ -26,4 +26,6 @@ public class ExampleItem {
     public String getText2() {
         return mText2;
     }
+
+    public void setmText2(String text){mText2=text;}
 }
