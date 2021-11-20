@@ -18,10 +18,7 @@ import java.lang.Object;
 
 //import java.awt.*;
 
-<<<<<<< HEAD
 
-public class Plant implements Serializable{
-=======
 public class Plant implements Serializable {
 
     List<Integer> pics = new LinkedList<>() {{
@@ -31,7 +28,7 @@ public class Plant implements Serializable {
         add(R.drawable.tomate4);
         add(R.drawable.tomate5);
     }};
->>>>>>> 1e82b6e5340565f3fbc89c1472f7ca99da2d1f41
+
 
     private String type;
     private String name;
