@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuTomato">
         <activity
+            android:name=".PlantDetails"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".LoadingScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
