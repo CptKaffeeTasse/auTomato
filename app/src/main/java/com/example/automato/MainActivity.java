@@ -63,6 +63,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void checkPlants() {
+        Timer timer = new Timer ();
+        TimerTask task = new TimerTask () {
+            @Override
+            public void run () {
+                for(Plant plant: plants)
+                    if(!plant.checkOnPlant()){
+                        List<String> messages = plant.getDetailedMessage();
+                        for(String message: messages)
+                            if(message != null)
+                                notifyUser(message);
+                    }
+            }
+        };
+
+        //check on plants every six hours
+        timer.schedule (task, 0l, 1000*60*60*6);
+    }
+
+    private void notifyUser(String message){
+        // send push notification to user
+    }
+
     public void insertItem(int position) {
         mExampleList.add(position, new ExampleItem(R.drawable.tomato, "New Item At Position" + position, "This is Line 2"));
         mAdapter.notifyItemInserted(position);
