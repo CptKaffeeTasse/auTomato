@@ -35,7 +35,6 @@ public class Plant {
         }catch(Exception e){
             e.printStackTrace();
         }
-
         this.type = type;
         this.name = name;
         this.imagePath = imagePath;
