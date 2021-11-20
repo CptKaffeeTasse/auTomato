@@ -10,18 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
+
 
 
 public class ExampleDialog extends AppCompatDialogFragment {
     private EditText editTextPlantName;
     private ExampleDialogListener listener;
+    private int position;
 
+    public ExampleDialog(int position){
+        this.position=position;
+    }
 
     @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -40,7 +43,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String plantname = editTextPlantName.getText().toString();
                         //MainActivity.plantName = plantname;
-                        listener.applyText(plantname);
+                        listener.applyText(plantname, position);
                     }
                 });
 
@@ -63,7 +66,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
 
 
     public interface ExampleDialogListener {
-        void applyText(String plantname);
+        void applyText(String plantname, int position);
     }
 
 }
