@@ -5,4 +5,5 @@
     <string name="plantPictureDesc">This is a picture of your plant</string>
     <string name="waterLevelDescr">Water level:  </string>
     <string name="tempDescr">"Temperature:  "</string>
+    <string name="lightdesc">"Lightlevel:  "</string>
 </resources>

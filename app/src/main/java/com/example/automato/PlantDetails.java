@@ -18,10 +18,12 @@ public class PlantDetails extends AppCompatActivity {
         ImageView plantPicture = findViewById(R.id.plantPicture);
         TextView currWaterlvl = findViewById(R.id.curr_water);
         TextView currTemp = findViewById(R.id.curr_temp);
+        TextView currlight = findViewById(R.id.currlight);
 
         plantName.setText(plant.getName());
         plantPicture.setImageResource(plant.getPicture());
         currWaterlvl.setText(plant.getCurrentSoilHumidity() + "%");
         currTemp.setText(plant.getCurrentTemperature() + "°C");
+        currlight.setText(plant.getCurrentLightLevel()+"%");
     }
 }
