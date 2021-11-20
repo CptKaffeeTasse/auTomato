@@ -12,62 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c138d9e8-e3cf-4e2b-b1d4-7e39451c34ab" name="Default Changelist" comment="info.json file, json file reader, plant klasse angefangen">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle_____idea_libraries_json_simple_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JsonEditor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/LeafNodeModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/NodeModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/OBJECT_TYPE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/VALUE_TYPE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/customDefaultMutableTreeNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json-simple-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/JsonEditor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/LeafNodeModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/META-INF/jsonEditor.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/META-INF/plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/NodeModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/OBJECT_TYPE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/VALUE_TYPE.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/customDefaultMutableTreeNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/jsonUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.jar/test1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsonUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/test1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/automato/Plant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/automato/ReadJsonFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/auTomato.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/auTomato.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+<<<<<<< HEAD
+    <list default="true" id="c138d9e8-e3cf-4e2b-b1d4-7e39451c34ab" name="Default Changelist" comment="info.json file, json file reader, plant klasse angefangen" />
+=======
+    <list default="true" id="c138d9e8-e3cf-4e2b-b1d4-7e39451c34ab" name="Default Changelist" comment="plant klasse weiter implementiert, MainActivity klasse erweitert">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/automato/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/automato/Plant.java" afterDir="false" />
     </list>
+>>>>>>> 5d578dd7871cb79f7c65732d6959ece5bac49770
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +27,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\betha\.android\avd\Nexus_5_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\lassm\.android\avd\Pixel_3a_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -85,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -109,8 +61,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+<<<<<<< HEAD
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/libraries" />
+=======
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
+>>>>>>> 5d578dd7871cb79f7c65732d6959ece5bac49770
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
@@ -118,8 +75,8 @@
       <recent name="com.example.automato" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\betha\AndroidStudioProjects\auTomato\.idea\libraries" />
       <recent name="C:\Users\betha\AndroidStudioProjects\auTomato\app\src\main\assets" />
+      <recent name="C:\Users\betha\AndroidStudioProjects\auTomato\.idea\libraries" />
       <recent name="C:\Users\lassm\Documents\HackaTum\auTomato\app\src\main\res\drawable" />
       <recent name="C:\Users\lassm\Documents\HackaTum\auTomato\app\build\generated\res\resValues\debug" />
     </key>
@@ -193,6 +150,21 @@
       <option name="presentableId" value="Default" />
       <updated>1637385015091</updated>
     </task>
+    <task id="LOCAL-00001" summary="info.json file, json file reader, plant klasse angefangen">
+      <created>1637406626396</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637406626396</updated>
+    </task>
+    <task id="LOCAL-00002" summary="plant klasse weiter implementiert, MainActivity klasse erweitert">
+      <created>1637417706114</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637417706114</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,9 +177,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="info.json file, json file reader, plant klasse angefangen" />
-    <option name="LAST_COMMIT_MESSAGE" value="info.json file, json file reader, plant klasse angefangen" />
+    <MESSAGE value="plant klasse weiter implementiert, MainActivity klasse erweitert" />
+    <option name="LAST_COMMIT_MESSAGE" value="plant klasse weiter implementiert, MainActivity klasse erweitert" />
   </component>
 </project>
