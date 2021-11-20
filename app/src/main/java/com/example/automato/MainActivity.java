@@ -111,26 +111,5 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-
-//_____________________________________________________
-        Timer timer = new Timer ();
-        TimerTask task = new TimerTask () {
-            @Override
-            public void run () {
-                for(Plant plant: plants)
-                    if(!plant.checkOnPlant()){
-
-                    }
-            }
-        };
-
-        //check on plants every six hours
-        timer.schedule (task, 0l, 1000*60*60*6);
-    }
-
-    private void notify(String message){
-        // send push notification to user
-
     }
 }

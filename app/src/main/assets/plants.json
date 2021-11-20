@@ -1,2 +1,7 @@
 [
+  {
+    "name" : "Tobi",
+    "type" : "indoor tomato",
+    "image path" : "tomato.png"
+  }
 ]
