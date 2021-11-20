@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
             public void run () {
                 for(Plant plant: plants)
                     if(!plant.checkOnPlant()){
-
+                        List<String> messages = plant.getDetailedMessage();
+                        for(String message: messages)
+                            if(message != null)
+                                notifyUser(message);
                     }
             }
         };
@@ -33,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule (task, 0l, 1000*60*60*6);
     }
 
-    private void notify(String message){
-        // send push notification to user
+    /*
+    notifyUser(): send push notification to user
+     */
+
+    private void notifyUser(String message){
+
     }
 }
