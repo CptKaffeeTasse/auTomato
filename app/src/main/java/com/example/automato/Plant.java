@@ -6,19 +6,20 @@ import org.json.JSONObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-<<<<<<< HEAD
+
 
 import java.lang.Object;
 
-=======
-//import java.awt.*;
->>>>>>> fcc6bb4cc0c55b190b1c7cd7e88d74080570b7b9
 
-public class Plant {
+//import java.awt.*;
+
+
+public class Plant implements Serializable{
 
     private String type;
     private String name;
@@ -66,13 +67,13 @@ public class Plant {
 
     /*
     addPlant(): store data of the newly added plant into json file
-     */
+
 
     private void addPlant(String type, String name){
 
-<<<<<<< HEAD
+
         try (FileWriter writer = new FileWriter("./app/src/main/assets/plants.json")){
-=======
+
         try {
             JSONArray plants = ReadJsonFile.getJSONArrayFromFile("/plants.json");
             for(int i = 0; i < plants.length(); i++)
@@ -84,17 +85,17 @@ public class Plant {
 
         try (FileWriter writer = new FileWriter("/plants.json")){
 
->>>>>>> fcc6bb4cc0c55b190b1c7cd7e88d74080570b7b9
+
             JSONObject obj = new JSONObject();
             obj.put("type", type);
             obj.put("name", name);
             obj.put("image path", imagePath);
 
-<<<<<<< HEAD
+
             JSONArray plants = ReadJsonFile.getJSONArrayFromFile("./app/src/main/assets/plants.jsonplants.json");
-=======
+
             JSONArray plants = ReadJsonFile.getJSONArrayFromFile("/plants.json");
->>>>>>> fcc6bb4cc0c55b190b1c7cd7e88d74080570b7b9
+
             plants.put(obj);
             writer.write(plants.toString());
             writer.flush();

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +20,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
     private ArrayList<ExampleItem> mExampleList;
 
     private RecyclerView mRecyclerView;
@@ -31,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextInsert;
     private EditText editTextRemove;
 
-    public static List<Plant> plants = new ArrayList<>();
+    public static List<Plant> plants = new ArrayList<>() {{
+        add(new Plant("indoor tomato", "ben", ""));
+        add(new Plant("indoor tomato", "toni",""));
+        add(new Plant("indoor tomato", "julie",""));
+    }};
+
+    public static String plantName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +56,14 @@ public class MainActivity extends AppCompatActivity {
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 int position = Integer.parseInt(editTextInsert.getText().toString());
+                ExampleDialog exampleDialog = new ExampleDialog();
+                exampleDialog.show(getSupportFragmentManager(), "example dialog");
                 insertItem(position);
             }
         });
+
 
         buttonRemove.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,25 +100,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void insertItem(int position) {
-        mExampleList.add(position, new ExampleItem(R.drawable.tomato, "New Item At Position" + position, "This is Line 2"));
+        plants.add(position,new Plant("indoor tomato", plantName, ""));
+        mExampleList.add(position, new ExampleItem(R.drawable.tomato, plants.get(position).getName() + position, plants.get(position).checkOnPlant()?"we're good :)":"we're not good :("));
         mAdapter.notifyItemInserted(position);
     }
 
     public void removeItem(int position) {
         mExampleList.remove(position);
+        plants.remove(position);
         mAdapter.notifyItemRemoved(position);
     }
 
     public void createExampleList() {
-        Plant plant1 = new Plant("indoor tomato", "ben", "",true);
-        Plant plant2 = new Plant("indoor tomato", "toni","", true);
-        Plant plant3 = new Plant("indoor tomato", "julie","", true);
-
-
         mExampleList = new ArrayList<>();
-        mExampleList.add(new ExampleItem(R.drawable.tomato, plant1.getName(), plant1.checkOnPlant()?"we're good :)":"we're not goof :("  ));
-        mExampleList.add(new ExampleItem(R.drawable.tomato, plant2.getName(), plant2.checkOnPlant()?"we're good :)":"we're not goof :("  ));
-        mExampleList.add(new ExampleItem(R.drawable.tomato, plant3.getName(), plant3.checkOnPlant()?"we're good :)":"we're not goof :("  ));
+        mExampleList.add(new ExampleItem(R.drawable.tomato, plants.get(0).getName(), plants.get(0).checkOnPlant()?"we're good :)":"we're not good :("  ));
+        mExampleList.add(new ExampleItem(R.drawable.tomato, plants.get(1).getName(), plants.get(1).checkOnPlant()?"we're good :)":"we're not good :("  ));
+        mExampleList.add(new ExampleItem(R.drawable.tomato, plants.get(2).getName(), plants.get(2).checkOnPlant()?"we're good :)":"we're not good :("  ));
     }
 
     public void buildRecyclerView() {
@@ -118,15 +126,12 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-<<<<<<< HEAD
-
-=======
->>>>>>> fcc6bb4cc0c55b190b1c7cd7e88d74080570b7b9
 
         mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent(MainActivity.this, PlantDetails.class);
+                intent.putExtra("PLANT", plants.get(position));
                 startActivity(intent);
                 //mExampleList.get(position).changeText1("test");
                 //mAdapter.notifyItemChanged(position);
@@ -152,5 +157,10 @@ public class MainActivity extends AppCompatActivity {
     private void notify(String message){
         // send push notification to user
 
+    }
+
+    @Override
+    public void applyText(String plantname) {
+        plantName=plantname;
     }
 }
