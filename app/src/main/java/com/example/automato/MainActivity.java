@@ -5,15 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -137,25 +132,6 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
                 //mAdapter.notifyItemChanged(position);
             }
         });
-
-
-        Timer timer = new Timer ();
-        TimerTask task = new TimerTask () {
-            @Override
-            public void run () {
-                for(Plant plant: plants)
-                    if(!plant.checkOnPlant()){
-
-                    }
-            }
-        };
-
-        //check on plants every six hours
-        timer.schedule (task, 0l, 1000*60*60*6);
-    }
-
-    private void notify(String message){
-        // send push notification to user
 
     }
 

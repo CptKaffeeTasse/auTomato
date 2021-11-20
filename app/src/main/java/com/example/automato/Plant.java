@@ -1,19 +1,10 @@
 package com.example.automato;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-
-
-import java.lang.Object;
 
 
 //import java.awt.*;
@@ -40,8 +31,8 @@ public class Plant implements Serializable {
     private int soil_humidity_max = 65;
     private int required_light_level_min = 8;
     private int required_light_level_max = 16;
-    private double required_temperature_min = 32.2;
-    private double required_temperature_max = 10.0;
+    private double required_temperature_min = 10.0;
+    private double required_temperature_max = 32.2;
 
     private static Random ran = new Random();
 
@@ -156,10 +147,10 @@ public class Plant implements Serializable {
             output.add(generateMessage(soil_humidity_min, current_water_level, true, "soil humidity"));
             output.add(generateMessage(soil_humidity_max, current_water_level, false, "soil humidity"));
             if(current_temperature < required_temperature_min)
-                output.add("Current temperature is too low, your plant " + this.name + " the " + this.type +
+                output.add("Temperature: \nCurrent temperature is too low, your plant " + this.name + " the " + this.type +
                         " can only tolerate a minimum temperature of "+ required_temperature_min);
             else if(current_temperature > required_temperature_max)
-                output.add("Current temperature is too high, your plant " + this.name + " the " + this.type +
+                output.add("Temperature: \nCurrent temperature is too high, your plant " + this.name + " the " + this.type +
                         " can only tolerate a maximum temperature of "+ required_temperature_min);
         } catch(Exception e){
             e.printStackTrace();
@@ -178,13 +169,14 @@ public class Plant implements Serializable {
             return null;
         int difference = (int)Math.abs(current-required);
         StringBuilder builder = new StringBuilder();
-        builder.append("Your plant " + this.name + " the " + this.type);
-        builder.append("'s "+ factor + " is ");
+        //builder.append("Your plant " + this.name + " the " + this.type);
+        //builder.append("'s "+ factor + " is ");
+        builder.append(factor + ": \n");
         if(isMin)
             builder.append("too low, please raise ");
         else
             builder.append("too high, please lower ");
-        builder.append(factor + " by " + difference + " percent.");
+        builder.append(factor + " by " + difference + " percent.\n");
         return builder.toString();
     }
 
