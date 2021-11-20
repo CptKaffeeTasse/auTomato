@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         add(new Plant("indoor tomato", "julie",""));
     }};
 
-    public static String plantName;
+    //public String plantName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +58,8 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
             public void onClick(View v) {
 
                 int position = Integer.parseInt(editTextInsert.getText().toString());
-                ExampleDialog exampleDialog = new ExampleDialog();
+                ExampleDialog exampleDialog = new ExampleDialog(position);
                 exampleDialog.show(getSupportFragmentManager(), "example dialog");
-                insertItem(position);
             }
         });
 
@@ -99,9 +98,9 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         // send push notification to user
     }
 
-    public void insertItem(int position) {
+    public void insertItem(int position, String plantName) {
         plants.add(position,new Plant("indoor tomato", plantName, ""));
-        mExampleList.add(position, new ExampleItem(R.drawable.tomato, plants.get(position).getName() + position, plants.get(position).checkOnPlant()?"we're good :)":"we're not good :("));
+        mExampleList.add(position, new ExampleItem(R.drawable.tomato, plants.get(position).getName(), plants.get(position).checkOnPlant()?"we're good :)":"we're not good :("));
         mAdapter.notifyItemInserted(position);
     }
 
@@ -160,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
     }
 
     @Override
-    public void applyText(String plantname) {
-        plantName=plantname;
+    public void applyText(String plantname, int position) {
+        insertItem(position,plantname);
     }
 }
