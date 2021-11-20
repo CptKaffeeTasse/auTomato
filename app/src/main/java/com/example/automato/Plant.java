@@ -25,6 +25,7 @@ public class Plant {
     private double required_temperature_max;
 
     public Plant(String type, String name, boolean newPlant){
+
         if(newPlant)
             addPlant(type, name);
         try {
@@ -33,6 +34,7 @@ public class Plant {
         }catch(Exception e){
             e.printStackTrace();
         }
+
         this.type = type;
         this.name = name;
         initialize();
