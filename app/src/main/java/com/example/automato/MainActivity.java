@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         add(new Plant("indoor tomato", "julie",""));
     }};
 
-    //public String plantName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +75,20 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         TimerTask task = new TimerTask () {
             @Override
             public void run () {
-                for(Plant plant: plants)
-                    if(!plant.checkOnPlant()){
+                int counter = 0;
+                for(Plant plant: plants) {
+                    if (!plant.checkOnPlant()) {
                         List<String> messages = plant.getDetailedMessage();
-                        for(String message: messages)
-                            if(message != null)
+                        for (String message : messages)
+                            if (message != null)
                                 notifyUser(message);
+
+                        mExampleList.get(counter).setmText2("we're not good :(");
+                    } else {
+                        mExampleList.get(counter).setmText2("we're good :)");
                     }
+                    counter++;
+                }
             }
         };
 
@@ -95,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
 
     public void insertItem(int position, String plantName) {
         plants.add(position,new Plant("indoor tomato", plantName, ""));
-        mExampleList.add(position, new ExampleItem(R.drawable.tomato, plants.get(position).getName(), plants.get(position).checkOnPlant()?"we're good :)":"we're not good :("));
+        mExampleList.add(position, new ExampleItem(plants.get(position).getPicture(), plants.get(position).getName(), plants.get(position).checkOnPlant()?"we're good :)":"we're not good :("));
         mAdapter.notifyItemInserted(position);
     }
 
@@ -107,9 +114,9 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
 
     public void createExampleList() {
         mExampleList = new ArrayList<>();
-        mExampleList.add(new ExampleItem(R.drawable.tomato, plants.get(0).getName(), plants.get(0).checkOnPlant()?"we're good :)":"we're not good :("  ));
-        mExampleList.add(new ExampleItem(R.drawable.tomato, plants.get(1).getName(), plants.get(1).checkOnPlant()?"we're good :)":"we're not good :("  ));
-        mExampleList.add(new ExampleItem(R.drawable.tomato, plants.get(2).getName(), plants.get(2).checkOnPlant()?"we're good :)":"we're not good :("  ));
+        mExampleList.add(new ExampleItem(plants.get(0).getPicture(), plants.get(0).getName(), plants.get(0).checkOnPlant()?"we're good :)":"we're not good :("  ));
+        mExampleList.add(new ExampleItem(plants.get(1).getPicture(), plants.get(1).getName(), plants.get(1).checkOnPlant()?"we're good :)":"we're not good :("  ));
+        mExampleList.add(new ExampleItem(plants.get(2).getPicture(), plants.get(2).getName(), plants.get(2).checkOnPlant()?"we're good :)":"we're not good :("  ));
     }
 
     public void buildRecyclerView() {
