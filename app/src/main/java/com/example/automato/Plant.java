@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 //import java.awt.*;
@@ -57,6 +59,20 @@ public class Plant implements Serializable {
         this.imagePath = imagePath;
         this.picture = pics.get(ran.nextInt(pics.size()));
         //initialize();
+
+        Timer timer = new Timer ();
+        TimerTask task = new TimerTask () {
+            @Override
+            public void run () {
+                current_light_level = getCurrentLightLevel();
+                current_water_level = getCurrentSoilHumidity();
+                current_temperature = getCurrentTemperature();
+                counter++;
+            }
+        };
+
+        //check on plants every thirty seconds
+        timer.schedule (task, 0l, 1000*30);
     }
 
     /*
@@ -120,11 +136,10 @@ public class Plant implements Serializable {
     public boolean checkOnPlant(){
         boolean output = true;
         try {
-
-
             output = current_light_level >= required_light_level_min && current_light_level <= required_light_level_max
                     && current_water_level >= soil_humidity_min && current_water_level <= soil_humidity_max
                     && current_temperature >= required_temperature_min && current_temperature <= required_temperature_max;
+            counter++;
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -194,7 +209,7 @@ public class Plant implements Serializable {
      */
 
     public double getCurrentTemperature(){
-        return 15.0 + (24+counter++)%24*0.6;
+        return 15.0 + (24+counter)%24*0.6;
     }
 
     /*
