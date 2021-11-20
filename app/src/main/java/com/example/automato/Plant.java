@@ -39,6 +39,7 @@ public class Plant implements Serializable {
     private double current_temperature = getCurrentTemperature();
 
     private static Random ran = new Random();
+    private static int counter = 0;
 
     public Plant(String type, String name, String imagePath){
 
@@ -193,7 +194,7 @@ public class Plant implements Serializable {
      */
 
     public double getCurrentTemperature(){
-        return (double)ran.nextInt(35);
+        return 15.0 + (24+counter++)%24*0.6;
     }
 
     /*
@@ -201,7 +202,7 @@ public class Plant implements Serializable {
      */
 
     public int getCurrentSoilHumidity(){
-        return ran.nextInt(100);
+        return 100 - (counter+50)%50;
     }
 
     /*
@@ -209,7 +210,7 @@ public class Plant implements Serializable {
      */
 
     public int getCurrentLightLevel(){
-        return ran.nextInt(100);
+        return 24 - (counter + 18)%18;
     }
 
     public double getCurrent_temperature() {

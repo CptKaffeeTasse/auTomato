@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
             }
         };
 
-        //check on plants every six hours
-        timer.schedule (task, 0l, 1000*60*60*6);
+        //check on plants every thirty seconds
+        timer.schedule (task, 0l, 1000*30);
     }
 
     private void notifyUser(String message){
