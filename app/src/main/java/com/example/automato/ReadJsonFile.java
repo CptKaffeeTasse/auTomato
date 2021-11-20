@@ -45,9 +45,9 @@ public class ReadJsonFile {
             try{
                 JSONObject tmp = array.getJSONObject(i);
             if(tmp.get("type").equals(type)){
-                data.put("required_water_level_max", tmp.get("required_water_level_max").toString());
-                data.put("required_water_level_min", tmp.get("required_water_level_min").toString());
-                data.put("required_water_level_max", tmp.get("required_water_level_max").toString());
+                data.put("soil_humidity_max", tmp.get("soil_humidity_max").toString());
+                data.put("soil_humidity_min", tmp.get("soil_humidity_min").toString());
+                data.put("required_light_level_max", tmp.get("required_light_level_max").toString());
                 data.put("required_light_level_min", tmp.get("required_light_level_min").toString());
                 data.put("required_temperature_max", tmp.get("required_temperature_max").toString());
                 data.put("required_temperature_min", tmp.get("required_temperature_min").toString());

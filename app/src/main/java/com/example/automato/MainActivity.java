@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                 removeItem(position);
             }
         });
+
+        checkPlants();
     }
 
     public void checkPlants() {
@@ -116,7 +118,10 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+<<<<<<< HEAD
 
+=======
+>>>>>>> fcc6bb4cc0c55b190b1c7cd7e88d74080570b7b9
 
         mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
@@ -129,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//_____________________________________________________
         Timer timer = new Timer ();
         TimerTask task = new TimerTask () {
             @Override

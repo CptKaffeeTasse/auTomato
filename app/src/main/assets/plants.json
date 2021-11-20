@@ -3,5 +3,11 @@
     "name" : "Tobi",
     "type" : "indoor tomato",
     "image path" : "tomato.png"
+  },
+
+  {
+    "name" : "Sam",
+    "type" : "palm tree",
+    "image path" : "palm.png"
   }
 ]
