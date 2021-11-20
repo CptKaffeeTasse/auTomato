@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">auTomato</string>
+    <string name="underline">______________________________________________________</string>
+    <string name="your_plants">Your plants</string>
 </resources>
