@@ -6,17 +6,27 @@ import org.json.JSONObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 //import java.awt.*;
 
-public class Plant {
+public class Plant implements Serializable {
+
+    List<Integer> pics = new LinkedList<>() {{
+        add(R.drawable.tomatenpflanze);
+        add(R.drawable.tomate2);
+        add(R.drawable.tomate3);
+        add(R.drawable.tomate4);
+        add(R.drawable.tomate5);
+    }};
 
     private String type;
     private String name;
     private String imagePath;
+    private int picture;
     private LocalDateTime lastChecked;
 
     private int soil_humidity_min = 90;
@@ -42,6 +52,7 @@ public class Plant {
         this.type = type;
         this.name = name;
         this.imagePath = imagePath;
+        this.picture = pics.get(ran.nextInt(pics.size()));
         //initialize();
     }
 
@@ -204,5 +215,9 @@ public class Plant {
 
     public String getImagePath(){
         return this.imagePath;
+    }
+
+    public int getPicture() {
+        return picture;
     }
 }
