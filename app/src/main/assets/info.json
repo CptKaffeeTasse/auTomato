@@ -1,0 +1,33 @@
+[
+{
+
+    "type": "indoor_tomato",
+    "required_water_level_max": "",
+    "required_water_level_min": "",
+    "required_water_level_max": "",
+    "required_light_level_min": "",
+    "required_temperature_max": "",
+    "required_temperature_min": ""
+
+}, {
+
+    "type": "outdoor_tomato",
+    "required_water_level_max": "",
+    "required_water_level_min": "",
+    "required_water_level_max": "",
+    "required_light_level_min": "",
+    "required_temperature_max": "",
+    "required_temperature_min": ""
+
+}, {
+
+    "type": "palm",
+    "required_water_level_max": "",
+    "required_water_level_min": "",
+    "required_water_level_max": "",
+    "required_light_level_min": "",
+    "required_temperature_max": "",
+    "required_temperature_min": ""
+
+    }
+]
