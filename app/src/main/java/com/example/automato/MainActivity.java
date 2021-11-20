@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-<<<<<<< HEAD
 
         mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
@@ -126,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//_____________________________________________________
         Timer timer = new Timer ();
         TimerTask task = new TimerTask () {
             @Override
@@ -145,7 +143,5 @@ public class MainActivity extends AppCompatActivity {
     private void notify(String message){
         // send push notification to user
 
-=======
->>>>>>> b57c90e6fa2812ca5e4e886d465c6364639928d2
     }
 }

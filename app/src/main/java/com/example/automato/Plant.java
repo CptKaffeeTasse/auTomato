@@ -19,15 +19,18 @@ public class Plant {
     private String imagePath;
     private LocalDateTime lastChecked;
 
-    private int soil_humidity_min;
-    private int soil_humidity_max;
-    private int required_light_level_min;
-    private int required_light_level_max;
-    private double required_temperature_min;
-    private double required_temperature_max;
+    private int soil_humidity_min = 90;
+    private int soil_humidity_max = 65;
+    private int required_light_level_min = 8;
+    private int required_light_level_max = 16;
+    private double required_temperature_min = 32.2;
+    private double required_temperature_max = 10.0;
+
+    private static Random ran = new Random();
 
     public Plant(String type, String name, String imagePath){
 
+        /*
         addPlant(type, name);
         try {
             if (!ReadJsonFile.checkTypeExists(type))
@@ -35,10 +38,11 @@ public class Plant {
         }catch(Exception e){
             e.printStackTrace();
         }
+        */
         this.type = type;
         this.name = name;
         this.imagePath = imagePath;
-        initialize();
+        //initialize();
     }
 
     /*
@@ -171,8 +175,7 @@ public class Plant {
      */
 
     public double getCurrentTemperature(){
-        Random ran = new Random();
-        return ran.nextInt(35);
+        return (double)ran.nextInt(35);
     }
 
     /*
@@ -180,7 +183,6 @@ public class Plant {
      */
 
     public int getCurrentSoilHumidity(){
-        Random ran = new Random();
         return ran.nextInt(100);
     }
 
@@ -189,7 +191,6 @@ public class Plant {
      */
 
     public int getCurrentLightLevel(){
-        Random ran = new Random();
         return ran.nextInt(100);
     }
 
