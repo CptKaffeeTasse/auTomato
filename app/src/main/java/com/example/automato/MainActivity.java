@@ -11,6 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity {
     private ArrayList<ExampleItem> mExampleList;
 
@@ -23,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextInsert;
     private EditText editTextRemove;
 
+    public static List<Plant> plants = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         createExampleList();
         buildRecyclerView();
 
@@ -78,5 +88,24 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+=======
+        Timer timer = new Timer ();
+        TimerTask task = new TimerTask () {
+            @Override
+            public void run () {
+                for(Plant plant: plants)
+                    if(!plant.checkOnPlant()){
+
+                    }
+            }
+        };
+
+        //check on plants every six hours
+        timer.schedule (task, 0l, 1000*60*60*6);
+    }
+
+    private void notify(String message){
+        // send push notification to user
+>>>>>>> 5d578dd7871cb79f7c65732d6959ece5bac49770
     }
 }

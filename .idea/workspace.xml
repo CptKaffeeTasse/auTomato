@@ -12,7 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c138d9e8-e3cf-4e2b-b1d4-7e39451c34ab" name="Default Changelist" comment="info.json file, json file reader, plant klasse angefangen" />
+=======
+    <list default="true" id="c138d9e8-e3cf-4e2b-b1d4-7e39451c34ab" name="Default Changelist" comment="plant klasse weiter implementiert, MainActivity klasse erweitert">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/automato/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/automato/Plant.java" afterDir="false" />
+    </list>
+>>>>>>> 5d578dd7871cb79f7c65732d6959ece5bac49770
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,8 +61,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< HEAD
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/libraries" />
+=======
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
+>>>>>>> 5d578dd7871cb79f7c65732d6959ece5bac49770
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
@@ -64,8 +75,8 @@
       <recent name="com.example.automato" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\betha\AndroidStudioProjects\auTomato\.idea\libraries" />
       <recent name="C:\Users\betha\AndroidStudioProjects\auTomato\app\src\main\assets" />
+      <recent name="C:\Users\betha\AndroidStudioProjects\auTomato\.idea\libraries" />
       <recent name="C:\Users\lassm\Documents\HackaTum\auTomato\app\src\main\res\drawable" />
       <recent name="C:\Users\lassm\Documents\HackaTum\auTomato\app\build\generated\res\resValues\debug" />
     </key>
@@ -139,6 +150,21 @@
       <option name="presentableId" value="Default" />
       <updated>1637385015091</updated>
     </task>
+    <task id="LOCAL-00001" summary="info.json file, json file reader, plant klasse angefangen">
+      <created>1637406626396</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637406626396</updated>
+    </task>
+    <task id="LOCAL-00002" summary="plant klasse weiter implementiert, MainActivity klasse erweitert">
+      <created>1637417706114</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637417706114</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +181,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="info.json file, json file reader, plant klasse angefangen" />
-    <option name="LAST_COMMIT_MESSAGE" value="info.json file, json file reader, plant klasse angefangen" />
+    <MESSAGE value="plant klasse weiter implementiert, MainActivity klasse erweitert" />
+    <option name="LAST_COMMIT_MESSAGE" value="plant klasse weiter implementiert, MainActivity klasse erweitert" />
   </component>
 </project>
