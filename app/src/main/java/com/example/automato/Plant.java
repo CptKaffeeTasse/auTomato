@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 import java.lang.Object;
-import java.awt.*;
+
 
 public class Plant {
 
@@ -64,13 +64,14 @@ public class Plant {
      */
 
     private void addPlant(String type, String name){
-        try (FileWriter writer = new FileWriter("plants.json")){
+
+        try (FileWriter writer = new FileWriter("./app/src/main/assets/plants.json")){
             JSONObject obj = new JSONObject();
             obj.put("type", type);
             obj.put("name", name);
             obj.put("image path", imagePath);
 
-            JSONArray plants = ReadJsonFile.getJSONArrayFromFile("plants.json");
+            JSONArray plants = ReadJsonFile.getJSONArrayFromFile("./app/src/main/assets/plants.jsonplants.json");
             plants.put(obj);
             writer.write(plants.toString());
             writer.flush();

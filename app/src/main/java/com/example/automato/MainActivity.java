@@ -97,10 +97,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createExampleList() {
+        Plant plant1 = new Plant("indoor tomato", "ben", "",true);
+        Plant plant2 = new Plant("indoor tomato", "toni","", true);
+        Plant plant3 = new Plant("indoor tomato", "julie","", true);
+
+
         mExampleList = new ArrayList<>();
-        mExampleList.add(new ExampleItem(R.drawable.tomato, "Line 1", "Line 2"));
-        mExampleList.add(new ExampleItem(R.drawable.tomato, "Line 3", "Line 4"));
-        mExampleList.add(new ExampleItem(R.drawable.tomato, "Line 5", "Line 6"));
+        mExampleList.add(new ExampleItem(R.drawable.tomato, plant1.getName(), plant1.checkOnPlant()?"we're good :)":"we're not goof :("  ));
+        mExampleList.add(new ExampleItem(R.drawable.tomato, plant2.getName(), plant2.checkOnPlant()?"we're good :)":"we're not goof :("  ));
+        mExampleList.add(new ExampleItem(R.drawable.tomato, plant3.getName(), plant3.checkOnPlant()?"we're good :)":"we're not goof :("  ));
     }
 
     public void buildRecyclerView() {
@@ -111,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-<<<<<<< HEAD
+
 
         mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
@@ -143,7 +148,5 @@ public class MainActivity extends AppCompatActivity {
     private void notify(String message){
         // send push notification to user
 
-=======
->>>>>>> b57c90e6fa2812ca5e4e886d465c6364639928d2
     }
 }
