@@ -1,0 +1,24 @@
+<idea-plugin>
+  <id>com.kaishwarya.json.Editor</id>
+  <name>JSON Editor</name>
+  <version>2.0</version>
+  <vendor email="k.aishwarya15@gmail.com" url="https://github.com/k-aishwarya">Kumari Aishwarya</vendor>
+
+  <description><![CDATA[
+      JetBrains IntelliJ IDE plugin for easy viewing and editing of currently opened JSON file in IDE using Tree Structure.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Fix: Update function in case of json array.
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="192.6"/>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="JSON Editor" anchor="right" factoryClass="JsonEditor" />
+  </extensions>
+
+  <actions>
+  </actions>
+
+</idea-plugin>
