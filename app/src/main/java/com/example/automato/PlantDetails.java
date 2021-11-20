@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PlantDetails extends AppCompatActivity {
-    Plant plant = new Plant("Tomate", "Tobi", "tomato.png");
+    //Plant plant = new Plant("Tomate", "Tobi", true);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,9 @@ public class PlantDetails extends AppCompatActivity {
         TextView currWaterlvl = findViewById(R.id.curr_water);
         TextView currTemp = findViewById(R.id.curr_temp);
 
-        plantName.setText(plant.getName());
-        //plantPicture.setImageResource(plant.getImagePath());
-        currWaterlvl.setText(plant.getCurrentSoilHumidity() + "%");
-        currTemp.setText(plant.getCurrentTemperature() + "°C");
+        //plantName.setText(plant.getName());
+        //plantPicture.setImageResource(plant.getPicture());
+        //currWaterlvl.setText(plant.getCurrentWaterLevel() + "%");
+        //currTemp.setText(plant.getCurrentTemperature() + "°C");
     }
 }

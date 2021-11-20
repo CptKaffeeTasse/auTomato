@@ -1,5 +1,6 @@
 package com.example.automato;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ExampleItem> mExampleList;
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private ExampleAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     private Button buttonInsert;
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         createExampleList();
         buildRecyclerView();
@@ -113,5 +113,39 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+<<<<<<< HEAD
+
+        mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(MainActivity.this, PlantDetails.class);
+                startActivity(intent);
+                //mExampleList.get(position).changeText1("test");
+                //mAdapter.notifyItemChanged(position);
+            }
+        });
+
+
+//_____________________________________________________
+        Timer timer = new Timer ();
+        TimerTask task = new TimerTask () {
+            @Override
+            public void run () {
+                for(Plant plant: plants)
+                    if(!plant.checkOnPlant()){
+
+                    }
+            }
+        };
+
+        //check on plants every six hours
+        timer.schedule (task, 0l, 1000*60*60*6);
+    }
+
+    private void notify(String message){
+        // send push notification to user
+
+=======
+>>>>>>> b57c90e6fa2812ca5e4e886d465c6364639928d2
     }
 }
