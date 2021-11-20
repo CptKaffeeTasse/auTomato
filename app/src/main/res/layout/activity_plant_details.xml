@@ -101,14 +101,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/lightdesc" />
+                    android:text="@string/lightdesc"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/currlight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textSize="24sp" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
 
         </LinearLayout>
     </ScrollView>
