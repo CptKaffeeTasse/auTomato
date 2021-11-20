@@ -1,17 +1,17 @@
 [
 {
 
-    "type": "indoor_tomato",
+    "type": "indoor tomato",
     "required_water_level_max": "",
     "required_water_level_min": "",
-    "required_light_level_max": "",
-    "required_light_level_min": "",
+    "required_light_level_max": "16",
+    "required_light_level_min": "8",
     "required_temperature_max": "",
     "required_temperature_min": ""
 
 }, {
 
-    "type": "outdoor_tomato",
+    "type": "outdoor tomato",
     "required_water_level_max": "",
     "required_water_level_min": "",
     "required_light_level_max": "",

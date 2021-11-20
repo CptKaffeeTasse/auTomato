@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -11,10 +12,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import java.lang.Object;
+import java.awt.*;
+
 public class Plant {
 
     private String type;
     private String name;
+    private String imagePath;
     private LocalDateTime lastChecked;
 
     private int required_water_level_min;
@@ -24,7 +29,7 @@ public class Plant {
     private double required_temperature_min;
     private double required_temperature_max;
 
-    public Plant(String type, String name, boolean newPlant){
+    public Plant(String type, String name, String imagePath, boolean newPlant){
 
         if(newPlant)
             addPlant(type, name);
@@ -37,6 +42,7 @@ public class Plant {
 
         this.type = type;
         this.name = name;
+        this.imagePath = imagePath;
         initialize();
     }
 
@@ -62,6 +68,7 @@ public class Plant {
             JSONObject obj = new JSONObject();
             obj.put("type", type);
             obj.put("name", name);
+            obj.put("image path", imagePath);
 
             JSONArray plants = ReadJsonFile.getJSONArrayFromFile("plants.json");
             plants.put(obj);
@@ -178,5 +185,17 @@ public class Plant {
     public int getCurrentLightLevel(){
         Random ran = new Random();
         return ran.nextInt(100);
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getType(){
+        return this.type;
+    }
+
+    public String getImagePath(){
+        return this.imagePath;
     }
 }
