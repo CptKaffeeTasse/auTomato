@@ -166,8 +166,6 @@ public class Plant implements Serializable {
             else if(current_temperature > required_temperature_max)
                 output.add("Temperature: \nCurrent temperature is too high, your plant " + this.name + " the " + this.type +
                         " can only tolerate a maximum temperature of "+ required_temperature_min);
-                output.add("Current temperature is too high, your plant " + this.name + " the " + this.type +
-                        " can only tolerate a maximum temperature of "+ required_temperature_max);
         } catch(Exception e){
             e.printStackTrace();
         }
