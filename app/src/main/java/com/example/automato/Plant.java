@@ -18,12 +18,25 @@ import java.lang.Object;
 
 //import java.awt.*;
 
+<<<<<<< HEAD
 
 public class Plant implements Serializable{
+=======
+public class Plant implements Serializable {
+
+    List<Integer> pics = new LinkedList<>() {{
+        add(R.drawable.tomatenpflanze);
+        add(R.drawable.tomate2);
+        add(R.drawable.tomate3);
+        add(R.drawable.tomate4);
+        add(R.drawable.tomate5);
+    }};
+>>>>>>> 1e82b6e5340565f3fbc89c1472f7ca99da2d1f41
 
     private String type;
     private String name;
     private String imagePath;
+    private int picture;
     private LocalDateTime lastChecked;
 
     private int soil_humidity_min = 90;
@@ -49,6 +62,7 @@ public class Plant implements Serializable{
         this.type = type;
         this.name = name;
         this.imagePath = imagePath;
+        this.picture = pics.get(ran.nextInt(pics.size()));
         //initialize();
     }
 
@@ -219,5 +233,9 @@ public class Plant implements Serializable{
 
     public String getImagePath(){
         return this.imagePath;
+    }
+
+    public int getPicture() {
+        return picture;
     }
 }
