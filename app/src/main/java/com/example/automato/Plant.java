@@ -36,12 +36,16 @@ public class Plant implements Serializable {
     private int picture;
     private LocalDateTime lastChecked;
 
-    private int soil_humidity_min = 90;
-    private int soil_humidity_max = 65;
-    private int required_light_level_min = 8;
-    private int required_light_level_max = 16;
-    private double required_temperature_min = 32.2;
-    private double required_temperature_max = 10.0;
+    private int soil_humidity_min = 65;
+    private int soil_humidity_max = 90;
+    private int required_light_level_min = 55;
+    private int required_light_level_max = 90;
+    private double required_temperature_min = 10.0;
+    private double required_temperature_max = 32.2;
+
+    private int current_light_level = getCurrentLightLevel();
+    private int current_water_level = getCurrentSoilHumidity();
+    private double current_temperature = getCurrentTemperature();
 
     private static Random ran = new Random();
 
@@ -124,9 +128,7 @@ public class Plant implements Serializable {
     public boolean checkOnPlant(){
         boolean output = true;
         try {
-            int current_light_level = getCurrentLightLevel();
-            int current_water_level = getCurrentSoilHumidity();
-            double current_temperature = getCurrentTemperature();
+
 
             output = current_light_level >= required_light_level_min && current_light_level <= required_light_level_max
                     && current_water_level >= soil_humidity_min && current_water_level <= soil_humidity_max
@@ -147,10 +149,6 @@ public class Plant implements Serializable {
     public List<String> getDetailedMessage(){
         List<String> output = new LinkedList<>();
         try {
-            int current_light_level = getCurrentLightLevel();
-            int current_water_level = getCurrentSoilHumidity();
-            double current_temperature = getCurrentTemperature();
-
             output.add(generateMessage(required_light_level_max, current_light_level, false, "light level"));
             output.add(generateMessage(required_light_level_min, current_light_level, true, "light level"));
             output.add(generateMessage(soil_humidity_min, current_water_level, true, "soil humidity"));
@@ -160,7 +158,7 @@ public class Plant implements Serializable {
                         " can only tolerate a minimum temperature of "+ required_temperature_min);
             else if(current_temperature > required_temperature_max)
                 output.add("Current temperature is too high, your plant " + this.name + " the " + this.type +
-                        " can only tolerate a maximum temperature of "+ required_temperature_min);
+                        " can only tolerate a maximum temperature of "+ required_temperature_max);
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -218,6 +216,18 @@ public class Plant implements Serializable {
 
     public int getCurrentLightLevel(){
         return ran.nextInt(100);
+    }
+
+    public double getCurrent_temperature() {
+        return current_temperature;
+    }
+
+    public int getCurrent_light_level() {
+        return current_light_level;
+    }
+
+    public int getCurrent_water_level() {
+        return current_water_level;
     }
 
     public String getName(){
