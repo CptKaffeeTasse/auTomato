@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
         createExampleList();
         buildRecyclerView();
 
@@ -61,6 +60,29 @@ public class MainActivity extends AppCompatActivity {
                 removeItem(position);
             }
         });
+}
+
+    public void checkPlants() {
+        Timer timer = new Timer ();
+        TimerTask task = new TimerTask () {
+            @Override
+            public void run () {
+                for(Plant plant: plants)
+                    if(!plant.checkOnPlant()){
+                        List<String> messages = plant.getDetailedMessage();
+                        for(String message: messages)
+                            if(message != null)
+                                notifyUser(message);
+                    }
+            }
+        };
+
+        //check on plants every six hours
+        timer.schedule (task, 0l, 1000*60*60*6);
+    }
+
+    private void notifyUser(String message){
+    // send push notification to user
     }
 
     public void insertItem(int position) {
@@ -88,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-=======
+
         Timer timer = new Timer ();
         TimerTask task = new TimerTask () {
             @Override
@@ -106,6 +128,5 @@ public class MainActivity extends AppCompatActivity {
 
     private void notify(String message){
         // send push notification to user
->>>>>>> 5d578dd7871cb79f7c65732d6959ece5bac49770
     }
 }
