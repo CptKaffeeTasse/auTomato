@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                 removeItem(position);
             }
         });
+
+        checkPlants();
     }
 
     public void checkPlants() {

@@ -4,16 +4,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-
-import java.lang.Object;
-import java.awt.*;
+//import java.awt.*;
 
 public class Plant {
 
@@ -22,17 +19,16 @@ public class Plant {
     private String imagePath;
     private LocalDateTime lastChecked;
 
-    private int required_water_level_min;
-    private int required_water_level_max;
+    private int soil_humidity_min;
+    private int soil_humidity_max;
     private int required_light_level_min;
     private int required_light_level_max;
     private double required_temperature_min;
     private double required_temperature_max;
 
-    public Plant(String type, String name, String imagePath, boolean newPlant){
+    public Plant(String type, String name, String imagePath){
 
-        if(newPlant)
-            addPlant(type, name);
+        addPlant(type, name);
         try {
             if (!ReadJsonFile.checkTypeExists(type))
                 throw new Exception("Sorry, we do not have data on this type of plant yet.");
@@ -51,8 +47,8 @@ public class Plant {
      */
 
     private void initialize(){
-        required_water_level_min = Integer.parseInt(getRequiredData("required_water_level_min"));
-        required_water_level_max = Integer.parseInt(getRequiredData("required_water_level_max"));
+        soil_humidity_min = Integer.parseInt(getRequiredData("required_water_level_min"));
+        soil_humidity_max = Integer.parseInt(getRequiredData("required_water_level_max"));
         required_light_level_min = Integer.parseInt(getRequiredData("required_light_level_min"));
         required_light_level_max = Integer.parseInt(getRequiredData("required_light_level_max"));
         required_temperature_min = Double.parseDouble(getRequiredData("required_temperature_min"));
@@ -64,13 +60,24 @@ public class Plant {
      */
 
     private void addPlant(String type, String name){
-        try (FileWriter writer = new FileWriter("plants.json")){
+
+        try {
+            JSONArray plants = ReadJsonFile.getJSONArrayFromFile("/plants.json");
+            for(int i = 0; i < plants.length(); i++)
+                if(plants.getJSONObject(i).get("name").equals(name) && plants.getJSONObject(i).get("type").equals(type))
+                    return;
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try (FileWriter writer = new FileWriter("/plants.json")){
+
             JSONObject obj = new JSONObject();
             obj.put("type", type);
             obj.put("name", name);
             obj.put("image path", imagePath);
 
-            JSONArray plants = ReadJsonFile.getJSONArrayFromFile("plants.json");
+            JSONArray plants = ReadJsonFile.getJSONArrayFromFile("/plants.json");
             plants.put(obj);
             writer.write(plants.toString());
             writer.flush();
@@ -82,18 +89,18 @@ public class Plant {
 
     /*
     checkOnPlant(): checks whether the plant is in suitable conditions, taking into account
-                    the temperature, water level and light level
+                    the temperature, soil humidity and light level
      */
 
     public boolean checkOnPlant(){
         boolean output = true;
         try {
             int current_light_level = getCurrentLightLevel();
-            int current_water_level = getCurrentWaterLevel();
+            int current_water_level = getCurrentSoilHumidity();
             double current_temperature = getCurrentTemperature();
 
             output = current_light_level >= required_light_level_min && current_light_level <= required_light_level_max
-                    && current_water_level >= required_water_level_min && current_water_level <= required_water_level_max
+                    && current_water_level >= soil_humidity_min && current_water_level <= soil_humidity_max
                     && current_temperature >= required_temperature_min && current_temperature <= required_temperature_max;
         } catch(Exception e){
             e.printStackTrace();
@@ -112,13 +119,13 @@ public class Plant {
         List<String> output = new LinkedList<>();
         try {
             int current_light_level = getCurrentLightLevel();
-            int current_water_level = getCurrentWaterLevel();
+            int current_water_level = getCurrentSoilHumidity();
             double current_temperature = getCurrentTemperature();
 
             output.add(generateMessage(required_light_level_max, current_light_level, false, "light level"));
             output.add(generateMessage(required_light_level_min, current_light_level, true, "light level"));
-            output.add(generateMessage(required_water_level_max, current_water_level, true, "water level"));
-            output.add(generateMessage(required_water_level_min, current_water_level, false, "water level"));
+            output.add(generateMessage(soil_humidity_min, current_water_level, true, "soil humidity"));
+            output.add(generateMessage(soil_humidity_max, current_water_level, false, "soil humidity"));
             if(current_temperature < required_temperature_min)
                 output.add("Current temperature is too low, your plant " + this.name + " the " + this.type +
                         " can only tolerate a minimum temperature of "+ required_temperature_min);
@@ -170,10 +177,10 @@ public class Plant {
     }
 
     /*
-    getCurrentWaterLevel(): get current water level from sensor
+    getCurrentWaterLevel(): get current soil humidity from sensor
      */
 
-    public int getCurrentWaterLevel(){
+    public int getCurrentSoilHumidity(){
         Random ran = new Random();
         return ran.nextInt(100);
     }
