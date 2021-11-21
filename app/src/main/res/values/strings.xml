@@ -6,4 +6,5 @@
     <string name="waterLevelDescr">Soil humidity:  </string>
     <string name="tempDescr">"Temperature:  "</string>
     <string name="lightdesc">"Lightlevel:  "</string>
+    <string name="refreshb">Refresh</string>
 </resources>

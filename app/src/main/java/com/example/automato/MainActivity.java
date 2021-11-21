@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
     private Button buttonRemove;
     private EditText editTextInsert;
     private EditText editTextRemove;
+    private Button buttonRefresh;
 
     public static List<Plant> plants = new ArrayList<>() {{
         add(new Plant("indoor tomato", "ben", ""));
@@ -47,6 +48,14 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         buttonRemove = findViewById(R.id.button_remove);
         editTextInsert = findViewById(R.id.edittext_insert);
         editTextRemove = findViewById(R.id.edittext_remove);
+        buttonRefresh = findViewById(R.id.refresh);
+
+        buttonRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAdapter.notifyDataSetChanged();
+            }
+        });
 
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
                 int position = Integer.parseInt(editTextInsert.getText().toString());
                 ExampleDialog exampleDialog = new ExampleDialog(position);
                 exampleDialog.show(getSupportFragmentManager(), "example dialog");
+                mAdapter.notifyDataSetChanged();
+
             }
         });
 
@@ -64,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
             public void onClick(View v) {
                 int position = Integer.parseInt(editTextRemove.getText().toString());
                 removeItem(position);
+                mAdapter.notifyDataSetChanged();
+
             }
         });
 
@@ -131,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         mAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                mAdapter.notifyDataSetChanged();
                 Intent intent = new Intent(MainActivity.this, PlantDetails.class);
                 intent.putExtra("PLANT", plants.get(position));
                 startActivity(intent);

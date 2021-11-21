@@ -74,5 +74,15 @@
         android:layout_toEndOf="@id/edittext_remove"
         android:text="remove" />
 
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="112dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="658dp"
+        android:text="@string/refreshb" />
+
 
 </RelativeLayout>
