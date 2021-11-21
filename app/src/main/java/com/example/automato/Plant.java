@@ -187,15 +187,25 @@ public class Plant implements Serializable {
         if(isMin && current >= required || !isMin && current <= required)
             return null;
         int difference = (int)Math.abs(current-required);
+        int stage = (difference < 10)?1:(difference < 25)?2:(difference<50)?3:4;
         StringBuilder builder = new StringBuilder();
         //builder.append("Your plant " + this.name + " the " + this.type);
         //builder.append("'s "+ factor + " is ");
         builder.append(factor + ": \n");
-        if(isMin)
-            builder.append("too low, please raise ");
-        else
-            builder.append("too high, please lower ");
-        builder.append(factor + " by " + difference + " percent.\n");
+        builder.append((stage == 4)?"way ":"");
+        builder.append((stage >= 2)?"too ":"");
+        if(isMin) {
+            builder.append("low, it needs ");
+            builder.append((stage==1)?"a little ":(stage==2)?"":(stage==3)?"much ":"a lot ");
+            builder.append("more ");
+        }
+        else {
+            builder.append("high, it needs ");
+            builder.append((stage==1)?"a little ":(stage==2)?"":(stage==3)?"much ":"a lot ");
+            builder.append("less ");
+        }
+        //builder.append(factor + " by " + difference + " percent.\n");
+        builder.append((factor.equals("light level"))?"sun light.":"water.");
         return builder.toString();
     }
 
