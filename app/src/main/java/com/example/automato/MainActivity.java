@@ -48,14 +48,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         buttonRemove = findViewById(R.id.button_remove);
         editTextInsert = findViewById(R.id.edittext_insert);
         editTextRemove = findViewById(R.id.edittext_remove);
-        buttonRefresh = findViewById(R.id.refresh);
 
-        buttonRefresh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAdapter.notifyDataSetChanged();
-            }
-        });
 
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
