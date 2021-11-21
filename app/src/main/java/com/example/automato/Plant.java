@@ -20,6 +20,9 @@ public class Plant implements Serializable {
         add(R.drawable.tomate3);
         add(R.drawable.tomate4);
         add(R.drawable.tomate5);
+        add(R.drawable.tomate6);
+        add(R.drawable.tomate7);
+        add(R.drawable.tomate8);
     }};
 
 
