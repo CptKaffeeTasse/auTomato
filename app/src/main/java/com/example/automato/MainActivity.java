@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
 
         createExampleList();
         buildRecyclerView();
+        checkPlants();
 
         buttonInsert = findViewById(R.id.button_insert);
         buttonRemove = findViewById(R.id.button_remove);
@@ -66,8 +67,6 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
                 removeItem(position);
             }
         });
-
-        checkPlants();
     }
 
     public void checkPlants() {
@@ -75,18 +74,30 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         TimerTask task = new TimerTask () {
             @Override
             public void run () {
+
                 int counter = 0;
                 for(Plant plant: plants) {
-                    if (!plant.checkOnPlant()) {
+                    boolean lastStatus = plant.getLastStatus();
+                    boolean currStatus = plant.checkOnPlant();
+                    if (!currStatus) {
                         List<String> messages = plant.getDetailedMessage();
                         for (String message : messages)
                             if (message != null)
                                 notifyUser(message);
-
                         mExampleList.get(counter).setmText2("we're not good :(");
                     } else {
                         mExampleList.get(counter).setmText2("we're good :)");
                     }
+                    /*
+                    if(currStatus && !lastStatus || !currStatus && lastStatus){
+                        int index = 0;
+                        for(;index < plants.size();index++)
+                            if(plant.getName().equals(plants.get(index).getName()))
+                                break;
+                        removeItem(0);
+                        insertItem(0, plant.getName());
+                    }
+                     */
                     counter++;
                 }
             }

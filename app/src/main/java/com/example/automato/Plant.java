@@ -28,6 +28,7 @@ public class Plant implements Serializable {
     private String imagePath;
     private int picture;
     private LocalDateTime lastChecked;
+    private boolean lastStatus;
 
     private int soil_humidity_min = 65;
     private int soil_humidity_max = 90;
@@ -145,6 +146,7 @@ public class Plant implements Serializable {
         }
 
         lastChecked = LocalDateTime.now();
+        lastStatus = output;
         return output;
     }
 
@@ -207,7 +209,7 @@ public class Plant implements Serializable {
      */
 
     public double getCurrentTemperature(){
-        return 15.0 + (24+counter)%24*0.6;
+        return 10.0 + (40+counter)%40*0.5;
     }
 
     /*
@@ -223,7 +225,7 @@ public class Plant implements Serializable {
      */
 
     public int getCurrentLightLevel(){
-        return 24 - (counter + 18)%18;
+        return 40 + (counter + 60)%60;
     }
 
     public double getCurrent_temperature() {
@@ -252,5 +254,9 @@ public class Plant implements Serializable {
 
     public int getPicture() {
         return picture;
+    }
+
+    public boolean getLastStatus(){
+        return lastStatus;
     }
 }

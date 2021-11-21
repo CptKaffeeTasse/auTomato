@@ -4,8 +4,8 @@
     "type": "indoor tomato",
     "soil_humidity_max": "90",
     "soil_humidity_min": "65",
-    "required_light_level_max": "16",
-    "required_light_level_min": "8",
+    "required_light_level_max": "90",
+    "required_light_level_min": "55",
     "required_temperature_max": "32.2",
     "required_temperature_min": "10.0"
 
@@ -14,8 +14,8 @@
     "type": "outdoor tomato",
     "soil_humidity_max": "90",
     "soil_humidity_min": "50",
-    "required_light_level_max": "18",
-    "required_light_level_min": "10",
+    "required_light_level_max": "95",
+    "required_light_level_min": "41",
     "required_temperature_max": "33.1",
     "required_temperature_min": "0.6"
 
@@ -24,8 +24,8 @@
     "type": "carrot",
     "soil_humidity_max": "95",
     "soil_humidity_min": "80",
-    "required_light_level_max": "20",
-    "required_light_level_min": "12",
+    "required_light_level_max": "83",
+    "required_light_level_min": "50",
     "required_temperature_max": "10.0",
     "required_temperature_min": "-9.4"
 
@@ -34,8 +34,8 @@
     "type": "hot pepper",
     "soil_humidity_max": "70",
     "soil_humidity_min": "50",
-    "required_light_level_max": "9",
-    "required_light_level_min": "5",
+    "required_light_level_max": "38",
+    "required_light_level_min": "21",
     "required_temperature_max": "26.7",
     "required_temperature_min": "18.3"
 
