@@ -24,7 +24,7 @@ public class PlantDetails extends AppCompatActivity {
         plantName.setText(plant.getName());
         plantPicture.setImageResource(plant.getPicture());
         currWaterlvl.setText(plant.getCurrent_water_level() + "%");
-        currTemp.setText(plant.getCurrent_temperature() + "°C");
+        currTemp.setText(String.format("%.1f", plant.getCurrent_temperature()) + "°C");
         currlight.setText(plant.getCurrent_light_level() + "%");
         StringBuilder b = new StringBuilder();
         plant.getDetailedMessage().stream().filter(s -> s != null).forEach(s -> b.append("\n").append(s));

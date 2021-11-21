@@ -20,6 +20,9 @@ public class Plant implements Serializable {
         add(R.drawable.tomate3);
         add(R.drawable.tomate4);
         add(R.drawable.tomate5);
+        add(R.drawable.tomate6);
+        add(R.drawable.tomate7);
+        add(R.drawable.tomate8);
     }};
 
 
@@ -28,20 +31,20 @@ public class Plant implements Serializable {
     private String imagePath;
     private int picture;
     private LocalDateTime lastChecked;
-    private boolean lastStatus;
 
     private int soil_humidity_min = 65;
     private int soil_humidity_max = 90;
     private int required_light_level_min = 55;
-    private int required_light_level_max = 90;
-    private double required_temperature_min = 10.0;
-    private double required_temperature_max = 32.2;
-
-    private int current_light_level = getCurrentLightLevel();
-    private int current_water_level = getCurrentSoilHumidity();
-    private double current_temperature = getCurrentTemperature();
+    private int required_light_level_max = 80;
+    private double required_temperature_min = 18.0;
+    private double required_temperature_max = 28.0;
 
     private static Random ran = new Random();
+
+    private int current_light_level = ran.nextInt(50) + 40;
+    private int current_water_level = ran.nextInt(50) + 50;
+    private double current_temperature = ran.nextInt(20) + 10;
+
     private static int counter = 0;
 
     public Plant(String type, String name, String imagePath){
@@ -146,7 +149,6 @@ public class Plant implements Serializable {
         }
 
         lastChecked = LocalDateTime.now();
-        lastStatus = output;
         return output;
     }
 
@@ -209,7 +211,14 @@ public class Plant implements Serializable {
      */
 
     public double getCurrentTemperature(){
-        return 10.0 + (40+counter)%40*0.5;
+        int salt = ran.nextInt(2);
+        switch (salt) {
+            case 0:
+                return current_temperature +(0.4 + ran.nextInt(2));
+            default:
+                return current_temperature - (0.4 + ran.nextInt(2));
+        }
+        //return 15.0 + (24+counter)%24*0.6;
     }
 
     /*
@@ -217,7 +226,14 @@ public class Plant implements Serializable {
      */
 
     public int getCurrentSoilHumidity(){
-        return 100 - (counter+50)%50;
+        int salt = ran.nextInt(2);
+        switch (salt) {
+            case 0:
+                return current_water_level +( 1 + ran.nextInt(4));
+            default:
+                return current_water_level - (1 + ran.nextInt(4));
+        }
+        //return 90 - (counter)%50;
     }
 
     /*
@@ -225,7 +241,14 @@ public class Plant implements Serializable {
      */
 
     public int getCurrentLightLevel(){
-        return 40 + (counter + 60)%60;
+        int salt = ran.nextInt(2);
+        switch (salt) {
+            case 0:
+                return current_light_level +( 1 + ran.nextInt(4));
+            default:
+                return current_light_level - (1 + ran.nextInt(4));
+        }
+        //return 80 - (counter)%50;
     }
 
     public double getCurrent_temperature() {
@@ -254,9 +277,5 @@ public class Plant implements Serializable {
 
     public int getPicture() {
         return picture;
-    }
-
-    public boolean getLastStatus(){
-        return lastStatus;
     }
 }
